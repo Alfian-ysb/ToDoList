@@ -1,3 +1,78 @@
+# ToDoList Laravel + React
+
+Aplikasi ToDoList modern berbasis Laravel (backend) dan React (frontend) dengan fitur autentikasi, CRUD, dan tampilan responsif.
+
+## Fitur
+- Autentikasi user (register, login, logout)
+- Setiap user punya todo list sendiri
+- CRUD todo list (judul, deskripsi, deadline, status selesai)
+- UI modern, responsif, dan smooth (mirip aplikasi notes)
+- Optimistic update (tandai selesai tanpa reload)
+
+## Instalasi & Menjalankan Project
+
+1. **Clone repository**
+	```bash
+	git clone https://github.com/Alfian-ysb/ToDoList.git
+	cd ToDoList
+	```
+
+2. **Install dependency backend (PHP/Laravel)**
+	```bash
+	composer install
+	```
+
+3. **Install dependency frontend (React/Vite)**
+	```bash
+	npm install
+	```
+
+4. **Copy file environment**
+	```bash
+	cp .env.example .env
+	# Atau copy manual jika di Windows
+	```
+	Edit file `.env` dan sesuaikan konfigurasi database (DB_DATABASE, DB_USERNAME, DB_PASSWORD, dsb).
+
+5. **Generate APP_KEY**
+	```bash
+	php artisan key:generate
+	```
+
+6. **Jalankan migration database**
+	```bash
+	php artisan migrate
+	```
+
+7. **Jalankan server development**
+	- Backend:
+	  ```bash
+	  php artisan serve
+	  ```
+	- Frontend (Vite):
+	  ```bash
+	  npm run dev
+	  ```
+
+8. **Akses aplikasi**
+	Buka browser ke http://localhost:8000
+
+## Struktur Penting
+- `resources/js/Pages/` : Halaman React (JSX)
+- `resources/views/` : Blade entry point (app.blade.php)
+- `public/images/` : Aset gambar statis
+- `resources/img/` : Aset gambar untuk di-import di React
+- `database/migrations/` : Struktur tabel database
+- `app/Http/Controllers/` : Logic backend (controller)
+
+## Catatan
+- Untuk gambar di public/images, gunakan path `/images/nama_file.png` di tag `<img>`.
+- Untuk gambar di resources/img, import di JSX: `import logo from '../../img/logo.png';`
+- Untuk deploy/production, jalankan `npm run build` dan sesuaikan konfigurasi server.
+
+---
+
+Jika ada pertanyaan atau error, silakan buka issue di repo ini.
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
